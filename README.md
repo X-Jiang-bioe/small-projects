@@ -1,2 +1,2 @@
-# Random-things
-A pool of code-snippets and Leetcode solutions
+# small-projects
+A pool of singlle file projects, solution to leetcode and project rosalind problems
