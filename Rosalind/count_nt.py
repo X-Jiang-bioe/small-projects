@@ -1,6 +1,14 @@
 from collections import Counter
+
 letters = ['A', 'C', 'G', 'T']
-test = 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'
-def count_bases(s):
+
+
+def count_nt(s):
     counter = Counter(s)
-    print(Counter(letters))
+    counts = [counter[x] for x in letters]
+    return(counts)
+
+
+if __name__ == "__main__":
+    f = open('files/rosalind_dna.txt')
+    print(*count_nt(f.read()))
