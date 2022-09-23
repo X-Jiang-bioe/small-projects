@@ -4,6 +4,9 @@ letters = ['A', 'C', 'G', 'T']
 
 
 def count_nt(s):
+    """
+    Returns counts of nt in order: 'A', 'C', 'G', 'T'
+    """
     counter = Counter(s)
     counts = [counter[x] for x in letters]
     return(counts)
