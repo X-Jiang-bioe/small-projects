@@ -13,4 +13,3 @@ if __name__ == '__main__':
     f = open('files/rosalind_subs.txt')
     lis = f.read().split('\n')
     print(*find_motif(lis[1], lis[0]))
-
