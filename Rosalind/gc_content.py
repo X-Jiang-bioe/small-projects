@@ -4,7 +4,7 @@ import parse_fasta
 
 def gc_content(file):
     """
-    Returns gc-content info given fasta file
+    Returns gc-content of genes when given fasta file
     """
     d = parse_fasta.parse_fasta(file)
     keys = list(d.keys())
@@ -13,7 +13,7 @@ def gc_content(file):
     return new_dic
 
 
-def get_mac_gc(dic):
+def get_max_gc(dic):
     m = max(dic, key=dic.get)
     return m
 
@@ -25,5 +25,5 @@ def gc_from_seq(seq):
 
 if __name__ == "__main__":
     dic = gc_content('files/rosalind_gc.txt')
-    m = get_mac_gc(dic)
+    m = get_max_gc(dic)
     print(m+"\n"+str(dic[m]))
