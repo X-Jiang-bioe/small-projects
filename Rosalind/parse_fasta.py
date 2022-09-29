@@ -4,6 +4,7 @@ import re
 def parse_fasta(fasta_file):
     """
     Reads the .fasta file given its location
+    returns a dictionary: {fasta name: sequence}
     """
     with open(fasta_file) as file:
         return parse_fasta_string(file.read())

@@ -1,6 +1,9 @@
 def prob_mend(k, m, n):
     '''
-    Derived f-la using event trees
+    Probability that an offspring in a population will
+    display the dominant trat, given population.
+
+    Formula derived using event trees
     '''
     z = k+m+n
     num = k*(k+m+n-1) + m*(k+0.75*(m-1) + 0.5 * n) + n*(k + 0.5 * m)
