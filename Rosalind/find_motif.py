@@ -20,10 +20,6 @@ def find_nglycosylation(ids):
     Finds N-Glycosilatiion motifs' locations (1-indexed)
     within a protein string given the uniprot IDs of said proteins.
 
-    The fuction utilizes Stream endpoint which is taxing on
-    uniprot servers.
-    Therefore, Only **small** batches of ids are recommended
-
     Retruns
     -------
     generator object with each element of the form:
@@ -50,7 +46,6 @@ def find_nglycosylation(ids):
     # process whole thing in a batch
     strings = tuple(parse.parse_fasta_string(fas).values())
 
-    # for string, id in zip(strings, ids):
     locs = \
         ((id, tuple(find_motif(motif_reg, s))) for id, s in zip(ids, strings))
 
