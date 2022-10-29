@@ -5,7 +5,7 @@ import requests
 
 def find_motif(motif, sequence):
     """
-    Solution for finding motif in DNA
+    Solution for Finding Motif in DNA problem
 
     Returns list of locations (1-indexed!!!) where the motif was found
     """
@@ -30,7 +30,6 @@ def find_nglycosylation(ids):
 
     motif_reg = "[N][^P][S,T][^P]"
     idtrim_reg = ".*?(?=(_))"
-    # id_reg = "\\|(.*?)\\|"
     fas = ""
     with requests.Session() as s:
         for id in ids:
@@ -45,7 +44,6 @@ def find_nglycosylation(ids):
 
     # process whole thing in a batch
     strings = tuple(parse.parse_fasta_string(fas).values())
-
     locs = \
         ((id, tuple(find_motif(motif_reg, s))) for id, s in zip(ids, strings))
 
