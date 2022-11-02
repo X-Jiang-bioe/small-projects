@@ -11,7 +11,6 @@ def frame_generator(seq, size):
     Makes a generator of substrings iterating through sequence
     with frame size of size
     """
-    # number of possible reading frames is equal to frame size
     for frame in range(len(seq)+1-size):
         yield seq[frame: frame+size], frame
 
@@ -35,6 +34,7 @@ def find_motif(sequences):
         elif present_all(base[current_pos: current_pos+size], sequences):
             current = base[current_pos: current_pos+size]
             continue
+        # if above fails, start full search
         else:
             for sub, pos in frame_generator(base, size):
                 if len(sub) < size:
